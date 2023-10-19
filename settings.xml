@@ -1,0 +1,53 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <servers>
+        <server>
+            <id>artifactory-snapshots</id>
+            <username>${artifactory.login}</username>
+            <password>${artifactory.password}</password>
+        </server>
+        <server>
+            <id>artifactory-releases</id>
+            <username>${artifactory.login}</username>
+            <password>${artifactory.password}</password>
+        </server>
+    </servers>
+
+    <mirrors>
+        <mirror>
+            <id>mvn-syn</id>
+            <name>LMRU artifactory - syn</name>
+            <url>https://art.lmru.tech/mvn-syn</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>all</id>
+            <repositories>
+                <repository>
+                    <id>artifactory-snapshots</id>
+                    <snapshots>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <url>https://art.lmru.tech/mvn-local-snapshots-syn</url>
+                </repository>
+                <repository>
+                    <id>artifactory-releases</id>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://art.lmru.tech/mvn-local-release-syn</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <!--make the profile active all the time -->
+        <activeProfile>all</activeProfile>
+    </activeProfiles>
+</settings>
