@@ -6,3 +6,4 @@ allure-results
 .env
 credentials.properties
 build
+/.idea/

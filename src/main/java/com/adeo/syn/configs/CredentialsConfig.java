@@ -9,11 +9,6 @@ import org.aeonbits.owner.Config;
         "classpath:${STAGE}/credentials.properties" // for local run
 })
 public interface CredentialsConfig extends Config {
-    @Key("STAGING_AREA_ADMIN_NAME")
-    String stagingAreaAdminName();
-
-    @Key("STAGING_AREA_ADMIN_PASSWORD")
-    String stagingAreaAdminPassword();
 
     @Key("CONTENT_HUB_EDITOR_NAME")
     String contentHubEditorUserName();
@@ -57,15 +52,6 @@ public interface CredentialsConfig extends Config {
     @Key("STATE_MACHINE_ADMIN_PASSWORD")
     String stateMachineAdminPassword();
 
-    @Key("TEMPLATE_GENERATOR_ADMIN_NAME")
-    String templateGeneratorAdminName();
-
-    @Key("TEMPLATE_GENERATOR_ADMIN_PASSWORD")
-    String templateGeneratorAdminPassword();
-
-    @Key("KAFKA_SASL_JAAS_CONFIG")
-    String kafkaJaasConfig();
-
     @Key("MAPPING_CRUD_ADMIN_NAME")
     String mappingCrudAdminName();
 
@@ -83,52 +69,4 @@ public interface CredentialsConfig extends Config {
 
     @Key("MAPPING_CRUD_READER_PASSWORD")
     String mappingCrudReaderPassword();
-
-    @Key("SEARCH_API_SECURITY_ADMIN_NAME")
-    String searchApiSecurityAdminName();
-
-    @Key("SEARCH_API_SECURITY_ADMIN_PASSWORD")
-    String searchApiSecurityAdminPassword();
-
-    @Key("SEARCH_API_SECURITY_EDITOR_NAME")
-    String searchApiSecurityEditorName();
-
-    @Key("SEARCH_API_SECURITY_EDITOR_PASSWORD")
-    String searchApiSecurityEditorPassword();
-
-    @Key("MATCHING_SECURITY_DPO_NAME")
-    String matchingDpoName();
-
-    @Key("MATCHING_SECURITY_DPO_PASSWORD")
-    String matchingDpoPassword();
-
-    @Key("MATCHING_SECURITY_EDITOR_NAME")
-    String matchingEditorName();
-
-    @Key("MATCHING_SECURITY_EDITOR_PASSWORD")
-    String matchingEditorPassword();
-
-    @Key("MATCHING_SECURITY_READER_NAME")
-    String matchingReaderName();
-
-    @Key("MATCHING_SECURITY_READER_PASSWORD")
-    String matchingReaderPassword();
-
-    @Key("MERGING_SECURITY_ADMIN_NAME")
-    String mergingSecurityAdminName();
-
-    @Key("MERGING_SECURITY_ADMIN_PASSWORD")
-    String mergingSecurityAdminPassword();
-
-    @Key("MERGING_SECURITY_EDITOR_NAME")
-    String mergingSecurityEditorName();
-
-    @Key("MERGING_SECURITY_EDITOR_PASSWORD")
-    String mergingSecurityEditorPassword();
-
-    @Key("MERGING_SECURITY_READER_NAME")
-    String mergingSecurityReaderName();
-
-    @Key("MERGING_SECURITY_READER_PASSWORD")
-    String mergingSecurityReaderPassword();
 }

@@ -1,0 +1,1 @@
+select * from common_attribute_value where attribute_id=:attribute_id

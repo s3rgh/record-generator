@@ -289,7 +289,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M7</version>
                 <configuration>
-                    <rerunFailingTestsCount>${rerunFailingTestsCount}</rerunFailingTestsCount>
+                    <systemPropertyVariables>
+                        <STAGE>${STAGE}</STAGE>
+                        <buildDirectory>${project.build.directory}</buildDirectory>
+                        <junit.jupiter.extensions.autodetection.enabled>true
+                        </junit.jupiter.extensions.autodetection.enabled>
+                    </systemPropertyVariables>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
